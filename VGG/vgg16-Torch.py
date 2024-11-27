@@ -43,7 +43,7 @@ class VGG16(nn.Module):
             else:
                 blocks.append(nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1))
             blocks.append(nn.ReLU())
-        blocks.append(nn.MaxPool2d(3, 2))
+        blocks.append(nn.MaxPool2d(2, 2))
         return nn.Sequential(*blocks)
 
     def forward(self, X):
